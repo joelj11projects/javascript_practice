@@ -1,0 +1,190 @@
+<html>
+<head>
+    <title>Hello</title>
+    
+   
+    </head>
+    
+    <body>  
+        <p><b>Challenge 1 - Function 1:</b></p>
+    <script> 
+        function squareNumber(num1) {
+        return num1 * num1; 
+
+        }
+        var x = squareNumber(2);
+        document.write(x);  
+    </script>
+        
+        
+        
+        <p><b> Challenge 1 - Function 2:</b></p>
+     <script> 
+        function squareNumber(x,y,z) {
+        return x + y + z; 
+
+        }
+        var q = squareNumber(2,2,1);
+        document.write(q);  
+    </script>
+
+
+        <p><b>Challenge Extra - Function textboxes:</b></p>
+        
+        <script> 
+        function add() {
+            checkit();
+        var total = parseInt(document.getElementById("box1").value) +  parseInt(document.getElementById("box2").value); 
+         document.getElementById("box3").value = total;
+            
+        }
+            
+            function minus() {
+                checkit();
+        var total = parseInt(document.getElementById("box1").value) - parseInt(document.getElementById("box2").value); 
+         document.getElementById("box3").value = total;
+            
+        }
+            
+            function times() {
+                checkit();
+        var total = parseInt(document.getElementById("box1").value) *  parseInt(document.getElementById("box2").value); 
+         document.getElementById("box3").value = total;
+            
+        }
+            
+            function divide() {
+                checkit();
+        var total = parseInt(document.getElementById("box1").value) /  parseInt(document.getElementById("box2").value); 
+         document.getElementById("box3").value = total;
+            
+        }
+            function checkit(){
+                if (document.getElementById("box2").value.length == 0)
+                {
+                    alert ("Box 2 empty");
+                    document.getElementById("box2").focus();
+                }
+                else if (document.getElementById("box1").value.length == 0)
+                    {
+                        alert ("Box 1 empty")
+                        document.getElementById("box1").focus();
+                    }
+                
+            }
+
+            
+    </script>
+        <input type="text" id="box1" placeholder="Enter num">
+        <input type="text" id="box2" placeholder="Enter num">
+        <br>
+        <button onclick="add()"> + </button>
+        <button onclick="minus()"> - </button>
+        <button onclick="times()"> x </button>
+        <button onclick="divide()"> / </button>
+        <br>
+        
+        <input type="text" id="box3" placeholder="result">
+        
+        
+        
+        <br>
+        <br>
+        <p><b>Challenge 2 - Creating objects</b></p>
+        <script>
+        var person = {
+        name: "Bob",
+        age: 50,
+        job: "Builder" };
+        
+             console.log(person)
+            console.log("My name is " + person.name)
+            
+            person.name = "Jeff";
+                console.log(person)
+            console.log("My name is " + person.name)
+        </script>
+        
+        <button onclick="addAge()"> Add Age </button>
+       
+        <script>
+           
+           function addAge() {
+            person.age += 1;
+            console.log(person)
+              
+           }
+            document.write(person.age);
+            
+           
+        </script>
+        
+        
+        <br>
+        <br>
+        <p><b>Challenge 3 - The String</b></p>
+         <script>
+            var comment = "My is Bob";
+             document.write(comment);
+        
+        </script>
+        
+        <button onclick="upper()"> Upper Case </button>
+        
+        <script>
+            function upper() {
+                var commentUpper = comment.toUpperCase();
+                document.write(commentUpper);
+            }
+        </script>
+    <br>
+        <br>
+        <script>
+            var theNumber = "1";
+            var convertString = parseInt(theNumber) + 2;
+            document.write("Converting String to Int " + convertString);
+        
+        </script>
+        
+        <br>
+        <br>
+         <script>
+            var theArray = ["The Array", "My Array", "Long Array", "Fun Array"];
+             console.log(theArray);
+             theArray.push("Last One");
+             console.log(theArray);
+             delete theArray[2];
+             console.log(theArray);
+        </script>
+            
+        
+        <br>
+        <br>
+        <p><b>Challenge Extra - Cursor follower</b></p>
+        <body onmousemove="mouseMove()"></body>
+        <input onmouseover="mouseOver()" type="text" id="cursorTextBox" style="position: absolute" "top: 50" "left: 100" value="here">
+        <span style="position:absolute" "top:100" "left: 200" id="sp">the</span>
+        <script>
+            
+            
+                function mouseMove() {
+                var cursorText = window.document.getElementById("cursorTextBox");
+                var spanText = window.document.getElementById("sp");
+                spanText.style.top = window.event.clientY;
+                spanText.style.left = window.event.clientX;
+                spanText.style.fontSize=10;
+                     
+                
+            }
+            
+            
+            
+            function mouseOver() {
+                var cursorT = window.document.getElementById("cursorTextBox");
+                window.document.getElementById("sp").innerHTML = cursorT.value;
+ 
+                }
+            
+        </script>
+    </body>
+</html>
