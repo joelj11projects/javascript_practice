@@ -10,7 +10,6 @@
     <script> 
         function squareNumber(num1) {
         return num1 * num1; 
-
         }
         var x = squareNumber(2);
         document.write(x);  
@@ -22,7 +21,6 @@
      <script> 
         function squareNumber(x,y,z) {
         return x + y + z; 
-
         }
         var q = squareNumber(2,2,1);
         document.write(q);  
@@ -72,7 +70,6 @@
                     }
                 
             }
-
             
     </script>
         <input type="text" id="box1" placeholder="Enter num">
@@ -192,10 +189,7 @@
         <p><b>Challenge 5 - FizzBuzz</b></p>
         
         <button onclick="fizzbuzz()"> Play </button>
-        <div id="fizzBox">
-        <p id="p1"> <br> </p>
-            <p id="p2"> e </p>
-        </div>
+        <div id="fizzBox"></div>
         <script>
             
             
@@ -207,7 +201,9 @@
                         if (i % 15 == 0){
                             console.log("FizzBuzz");
                             //text = "fizzbuzz";
-                             var para = document.createElement("fizzBox");
+                             var para = document.createElement("p");
+                            var node = document.createTextNode("Fizz Buzz");
+                            para.appendChild(node);
                             var element = document.getElementById("fizzBox");
                             element.appendChild(para);
                             
@@ -216,7 +212,9 @@
                         else if (i % 3 == 0){
                             console.log("Fizz");
                            // text = "fizz";
-                            var para = document.createElement("fizzBox");
+                            var para = document.createElement("p");
+                            var node = document.createTextNode("Fizz");
+                            para.appendChild(node);
                             var element = document.getElementById("fizzBox");
                             element.appendChild(para);
                             
@@ -226,12 +224,19 @@
                             
                             //text = "d";
                             
-                            var para = document.createElement("fizzBox");
+                            var para = document.createElement("p");
+                            var node = document.createTextNode("Buzz");
+                            para.appendChild(node);
                             var element = document.getElementById("fizzBox");
                             element.appendChild(para);
                         }
                         else{
                             console.log(i);
+                            var para = document.createElement("p");
+                            var node = document.createTextNode(i);
+                            para.appendChild(node);
+                            var element = document.getElementById("fizzBox");
+                            element.appendChild(para);
                         }
                         
                     }
@@ -245,13 +250,23 @@
         <p><b>Challenge 6 - Large number divider</b></p>
         <input type="text" id="largeNum" placeholder="Enter num">
         <button onclick="divider()"> Play </button>
+        <p id="demo"></p>
         <script> 
             function divider() {
-                if (document.getElementById("largeNum").value / 3) {
-                    document.write("f");
+                
+                
+                if (document.getElementById("largeNum").value % 3 === 0) {
+                    //document.getElementById("demo").innerHTML = largeNum.value;
+                    document.getElementById("demo").innerHTML = document.getElementById("largeNum").value % 3;
                 }
+               else {
+                   document.getElementById("largeNum").value = parseInt(document.getElementById("largeNum").value) + 1;
+                     divider;
+                   //document.getElementById("demo").innerHTML = //document.getElementById("largeNum").value % 3;
+                    }
+                
             }
-            
+
         </script>
         
         
