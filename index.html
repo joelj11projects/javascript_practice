@@ -106,15 +106,15 @@
         </script>
         
         <button onclick="addAge()"> Add Age </button>
-       
+        <p id="ageBox"></p>
         <script>
            
            function addAge() {
             person.age += 1;
             console.log(person)
-              
+              document.getElementById("ageBox").innerHTML = person.age;
            }
-            document.write(person.age);
+            
             
            
         </script>
@@ -161,7 +161,8 @@
         <br>
         <br>
         <p><b>Challenge Extra - Cursor follower</b></p>
-        <body onmousemove="mouseMove()"></body>
+<!--        Uncomment the bottom code to make the cursor follower work-->
+<!--        <body onmousemove="mouseMove()"></body>-->
         <input onmouseover="mouseOver()" type="text" id="cursorTextBox" style="position: absolute" "top: 50" "left: 100" value="here">
         <span style="position:absolute" "top:100" "left: 200" id="sp">the</span>
         <script>
@@ -177,8 +178,6 @@
                 
             }
             
-            
-            
             function mouseOver() {
                 var cursorT = window.document.getElementById("cursorTextBox");
                 window.document.getElementById("sp").innerHTML = cursorT.value;
@@ -186,5 +185,76 @@
                 }
             
         </script>
+        
+        
+        <br>
+        <br>
+        <p><b>Challenge 5 - FizzBuzz</b></p>
+        
+        <button onclick="fizzbuzz()"> Play </button>
+        <div id="fizzBox">
+        <p id="p1"> <br> </p>
+            <p id="p2"> e </p>
+        </div>
+        <script>
+            
+            
+            function fizzbuzz(){
+                
+                for (var i=1; i <= 50; i++)
+                    {
+                        
+                        if (i % 15 == 0){
+                            console.log("FizzBuzz");
+                            //text = "fizzbuzz";
+                             var para = document.createElement("fizzBox");
+                            var element = document.getElementById("fizzBox");
+                            element.appendChild(para);
+                            
+                            
+                        }
+                        else if (i % 3 == 0){
+                            console.log("Fizz");
+                           // text = "fizz";
+                            var para = document.createElement("fizzBox");
+                            var element = document.getElementById("fizzBox");
+                            element.appendChild(para);
+                            
+                        }
+                        else if (i % 5 == 0){
+                            console.log("Buzz");
+                            
+                            //text = "d";
+                            
+                            var para = document.createElement("fizzBox");
+                            var element = document.getElementById("fizzBox");
+                            element.appendChild(para);
+                        }
+                        else{
+                            console.log(i);
+                        }
+                        
+                    }
+                   
+                }
+          
+        </script>
+        
+        <br>
+        <br>
+        <p><b>Challenge 6 - Large number divider</b></p>
+        <input type="text" id="largeNum" placeholder="Enter num">
+        <button onclick="divider()"> Play </button>
+        <script> 
+            function divider() {
+                if (document.getElementById("largeNum").value / 3) {
+                    document.write("f");
+                }
+            }
+            
+        </script>
+        
+        
+        
     </body>
 </html>
